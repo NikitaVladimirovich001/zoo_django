@@ -1,0 +1,21 @@
+{% extends 'layout.html'%}
+
+{% block title %}Коментарии{% endblock %}
+
+{% block content %}
+    <div class="blok_komment">
+        {% for el in komments %}
+            <h4>Имя пользователя: {{ el.name }}</h4>
+            <p>{{ el.text }}</p>
+            <p>{{ el.date }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="blok_komment">
+    <form method="post" class="border fixed-bottom">
+        {% csrf_token %}
+        {{ komment_form }}
+        <input type="submit" value="Добавить комментирии" class="btn btn-success">
+    </form>
+    </div>
+{% endblock %}

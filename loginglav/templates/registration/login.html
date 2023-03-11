@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+
+    <def class="features">
+        <h4>Авторизация - регистрация</h4>
+        <center><form action=".." method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="btn btn-success" value="login" type="submit">
+        </form><center>
+    </def>
+{% endblock %}

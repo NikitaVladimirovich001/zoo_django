@@ -1,0 +1,18 @@
+{% extends 'layout.html'%}
+{% load static %}
+
+{% block title %}Список животных{% endblock %}
+
+{% block content %}
+    <def class="features">
+        <h4>Животные</h4>
+            <center>
+            {% for Tov in animals_list %}
+                    <img class="" width="300px" height="400px"  src={{Tov.img.url}}>
+                    <p>Кличка животного: {{ Tov.name }}</p>
+                    <p>Возраст: {{ Tov.age }}</p>
+                    <p>Описание: {{ Tov.description }}</p>
+            {% endfor %}
+            </center>
+    </def>
+{% endblock %}
